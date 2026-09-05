@@ -31,7 +31,7 @@ class TagController
             ]);
         }
 
-        return $this->view->render($response, 'posts.twig', [
+        return $this->view->render($response, 'index.twig', [
             'posts' => $posts->forPage($page, $this->postsPerPage),
             'paginator' => new Paginator($posts, $this->postsPerPage, $page),
         ]);

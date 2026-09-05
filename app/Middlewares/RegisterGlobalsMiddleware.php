@@ -18,6 +18,9 @@ class RegisterGlobalsMiddleware
     #[Inject('tags_enabled')]
     private bool $tagsEnabled;
 
+    #[Inject('posts_list_enabled')]
+    private bool $postsListEnabled;
+
     public function __construct(
         private Twig $view,
     ) {}
@@ -28,6 +31,7 @@ class RegisterGlobalsMiddleware
 
         $twigEnvironment->addGlobal('authors_enabled', $this->authorsEnabled);
         $twigEnvironment->addGlobal('tags_enabled', $this->tagsEnabled);
+        $twigEnvironment->addGlobal('posts_list_enabled', $this->postsListEnabled);
         $twigEnvironment->addGlobal('current_url', $this->currentUrl($request));
 
         return $handler->handle($request);

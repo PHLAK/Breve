@@ -7,13 +7,11 @@ namespace Tests\Controllers;
 use App\Controllers\PostsController;
 use App\Data\Post;
 use App\Posts;
-use App\Utilities\Paginator;
 use Carbon\Carbon;
 use Fig\Http\Message\StatusCodeInterface;
 use Illuminate\Support\LazyCollection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\Attributes\TestWith;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Psr7\Response;
 use Slim\Views\Twig;
@@ -22,35 +20,42 @@ use Tests\TestCase;
 #[CoversClass(PostsController::class)]
 class PostsControllerTest extends TestCase
 {
-    #[Test, TestWith([1]), TestWith([2]), TestWith([3])]
-    public function it_returns_the_list_of_posts_for_a_given_page(int $page): void
+    #[Test]
+    public function it_returns_the_list_of_posts_grouped_by_year(): void
     {
-        $this->container->set('posts_per_page', $perPage = 4);
-
-        $posts = $this->mock(Posts::class);
-        $posts->expects($this->once())->method('all')->willReturn(
-            $appPosts = $this->createMock(LazyCollection::class)
-        );
-
-        $appPosts->expects($this->once())->method('forPage')->with($page, $perPage)->willReturn(
-            $postsForPage = LazyCollection::times(4, fn (int $iteration): Post => new Post(
-                title: sprintf('Test Post %d', $iteration),
+        $posts = [
+            'test-post-1' => new Post(
+                title: 'Test Post One',
                 body: 'Post body...',
-                published: Carbon::now()->subDays($iteration),
-            ))
+                published: Carbon::parse('2026-08-21 12:00:00'),
+            ),
+            'test-post-2' => new Post(
+                title: 'Test Post Two',
+                body: 'Post body...',
+                published: Carbon::parse('2026-02-02 12:00:00'),
+            ),
+            'test-post-3' => new Post(
+                title: 'Test Post Three',
+                body: 'Post body...',
+                published: Carbon::parse('2025-12-12 12:00:00'),
+            ),
+        ];
+
+        $appPosts = $this->mock(Posts::class);
+        $appPosts->expects($this->once())->method('all')->willReturn(
+            new LazyCollection($posts)
         );
 
         $twig = $this->mock(Twig::class);
         $twig->expects($this->once())->method('render')->with($testResponse = new Response, 'posts.twig', [
-            'posts' => $postsForPage,
-            'paginator' => new Paginator($appPosts, $perPage, $page),
+            'posts' => collect($posts)->groupBy(fn (Post $post): int => $post->published->year, true),
+            'count' => 3,
         ])->willReturn(
             $testResponse->withStatus(StatusCodeInterface::STATUS_OK)
         );
 
         $response = $this->container->call(PostsController::class, [
             'response' => $testResponse,
-            'page' => $page,
         ]);
 
         $this->assertInstanceOf(ResponseInterface::class, $response);
@@ -60,8 +65,8 @@ class PostsControllerTest extends TestCase
     #[Test]
     public function it_shows_an_error_page_when_there_are_no_posts(): void
     {
-        $posts = $this->mock(Posts::class);
-        $posts->expects($this->once())->method('all')->willReturn(new LazyCollection);
+        $appPosts = $this->mock(Posts::class);
+        $appPosts->expects($this->once())->method('all')->willReturn(new LazyCollection);
 
         $twig = $this->mock(Twig::class);
         $twig->expects($this->once())->method('render')->with($testResponse = new Response, 'error.twig', [

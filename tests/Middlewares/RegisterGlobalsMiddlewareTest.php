@@ -30,10 +30,10 @@ class RegisterGlobalsMiddlewareTest extends TestCase
     public static function configurationProvider(): array
     {
         return [
-            [true, true],
-            [true, false],
-            [false, true],
-            [false, false],
+            [true, true, true],
+            [true, false, true],
+            [false, true, false],
+            [false, false, false],
         ];
     }
 
@@ -48,10 +48,14 @@ class RegisterGlobalsMiddlewareTest extends TestCase
     }
 
     #[Test, DataProvider('configurationProvider'), AllowMockObjectsWithoutExpectations]
-    public function it_sets_the_global_variables(bool $authorsEnabled, bool $tagsEnabled): void
-    {
+    public function it_sets_the_global_variables(
+        bool $authorsEnabled,
+        bool $tagsEnabled,
+        bool $postsListEnabled,
+    ): void {
         $this->container->set('authors_enabled', $authorsEnabled);
         $this->container->set('tags_enabled', $tagsEnabled);
+        $this->container->set('posts_list_enabled', $postsListEnabled);
 
         $request = $this->createMock(ServerRequestInterface::class);
         $request->method('getUri')->willReturn($this->createUri('https', 'breve.example.com', null, '/post/test-post'));
@@ -67,6 +71,7 @@ class RegisterGlobalsMiddlewareTest extends TestCase
         $this->assertEquals([
             'authors_enabled' => $authorsEnabled,
             'tags_enabled' => $tagsEnabled,
+            'posts_list_enabled' => $postsListEnabled,
             'current_url' => 'https://breve.example.com/post/test-post',
         ], $this->view->getEnvironment()->getGlobals());
     }

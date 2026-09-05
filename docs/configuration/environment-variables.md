@@ -112,6 +112,14 @@ Whether or not post pagination is enabled.
 - **Possible Values:** `true` or `false`
 - **Default Value:** `true`
 
+### `POSTS_LIST_LINK`
+
+Whether or not to show the "All Posts" navigation link (and enable the
+`/posts` page).
+
+- **Possible Values:** `true` or `false`
+- **Default Value:** `false`
+
 ### `POSTS_PER_PAGE`
 
 The number of posts to display per page when pagination is enabled.

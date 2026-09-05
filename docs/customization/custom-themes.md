@@ -103,22 +103,9 @@ Renders the RSS feed of published posts.
 - `title`: The site title
 - `description`: The site meta description
 - `posts`: A list of [`Post`](https://github.com/PHLAK/Breve/blob/master/app/Data/Post.php)
-  objects with the same properties as those listed for `posts.twig` below
+  objects with the same properties as those listed for `index.twig` below
 
-#### `page.twig` <badge type="info" text="/page/{slug}" />
-
-Displays a user-generated page.
-
-##### Data
-
-- `page`: A [`Page`](https://github.com/PHLAK/Breve/blob/master/app/Data/Page.php)
-  object with the following properties
-  - `title`: The page title
-  - `link`: The link text
-  - `body`: The rendered page contents (HTML)
-  - `weight`: The sort weight
-
-#### `posts.twig` <badge type="info" text="/" /> <badge type="info" text="/author/{author}" /> <badge type="info" text="/tag/{tag}" />
+#### `index.twig` <badge type="info" text="/" /> <badge type="info" text="/author/{author}" /> <badge type="info" text="/tag/{tag}" />
 
 Displays a paginated list of posts. Used for the home page, posts by a specific
 author, and posts with a specific tag.
@@ -148,6 +135,19 @@ author, and posts with a specific tag.
   - `previous`: The previous page number (or `null` if on the first page)
   - `next`: The next page number (or `null` if on the last page)
 
+#### `page.twig` <badge type="info" text="/page/{slug}" />
+
+Displays a user-generated page.
+
+##### Data
+
+- `page`: A [`Page`](https://github.com/PHLAK/Breve/blob/master/app/Data/Page.php)
+  object with the following properties
+  - `title`: The page title
+  - `link`: The link text
+  - `body`: The rendered page contents (HTML)
+  - `weight`: The sort weight
+
 #### `post.twig` <badge type="info" text="/post/{slug}" />
 
 Displays a single blog post.
@@ -168,6 +168,31 @@ Displays a single blog post.
   - `canonical`: A canonical URL
   - `draft`: Whether the post is a draft
   - `excerpt`: The post excerpt (rendered HTML, from the `excerpt()` method)
+
+#### `posts.twig` <badge type="info" text="/posts" />
+
+Displays a list of all published posts grouped by publication year.
+
+##### Data
+
+- `posts`: A list of posts grouped by publication year where the key is the
+  four-digit year and the value is a list of [`Post`](https://github.com/PHLAK/Breve/blob/master/app/Data/Post.php)
+  objects keyed by post slug, with the same properties as those listed for
+  `index.twig` above.
+
+  ```php
+  [
+      2026 => [
+          'some-post' => Post,
+          'another-post' => Post,
+      ],
+      2025 => [
+          'an-older-post' => Post,
+      ],
+  ]
+  ```
+
+- `count`: The total number of published posts.
 
 #### `tags.twig` <badge type="info" text="/tags" />
 

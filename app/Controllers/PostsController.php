@@ -4,34 +4,32 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Data\Post;
 use App\Posts;
-use App\Utilities\Paginator;
-use DI\Attribute\Inject;
+use Illuminate\Support\Collection;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Psr7\Response;
 use Slim\Views\Twig;
 
 class PostsController
 {
-    #[Inject('posts_per_page')]
-    private int $postsPerPage;
-
     public function __construct(
         private Posts $posts,
         private Twig $view,
     ) {}
 
-    public function __invoke(Response $response, int $page = 1): ResponseInterface
+    public function __invoke(Response $response): ResponseInterface
     {
-        $posts = $this->posts->all();
+        /** @var Collection<string, Post> $posts */
+        $posts = $this->posts->all()->collect();
 
         if ($posts->isEmpty()) {
             return $this->view->render($response, 'error.twig', ['message' => 'No posts found']);
         }
 
         return $this->view->render($response, 'posts.twig', [
-            'posts' => $posts->forPage($page, $this->postsPerPage),
-            'paginator' => new Paginator($posts, $this->postsPerPage, $page),
+            'posts' => $posts->groupBy(fn (Post $post): int => $post->published->year, true),
+            'count' => $posts->count(),
         ]);
     }
 }

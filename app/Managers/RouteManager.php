@@ -21,6 +21,9 @@ class RouteManager
     #[Inject('tags_enabled')]
     private bool $tagsEnabled;
 
+    #[Inject('posts_list_enabled')]
+    private bool $postsListEnabled;
+
     /** @var array{pages: array<string,string>, posts: array<string,string>} */
     #[Inject('redirects')]
     private array $redirects;
@@ -35,13 +38,17 @@ class RouteManager
             $this->app->redirect(sprintf('/post/%s', $old), sprintf('/post/%s', $new), 301);
         }
 
-        $this->app->get('/[{page:[0-9]+}]', Controllers\PostsController::class)->setName('posts');
+        $this->app->get('/[{page:[0-9]+}]', Controllers\IndexController::class)->setName('index');
         $this->app->get('/post/{slug}', Controllers\PostController::class)->setName('post');
         $this->app->get('/page/{slug}', Controllers\PageController::class)->setName('page');
         $this->app->get('/author/{author}[/{page:[0-9]+}]', Controllers\AuthorController::class)->setName('author');
         $this->app->get('/tag/{tag}[/{page:[0-9]+}]', Controllers\TagController::class)->setName('tag');
         $this->app->get('/search', Controllers\SearchController::class)->setName('search');
         $this->app->get('/feed', Controllers\FeedController::class)->setName('feed');
+
+        if ($this->postsListEnabled) {
+            $this->app->get('/posts', Controllers\PostsController::class)->setName('posts');
+        }
 
         if ($this->authorsEnabled) {
             $this->app->get('/authors', Controllers\AuthorsController::class)->setName('authors');

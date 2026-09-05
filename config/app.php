@@ -128,6 +128,13 @@ return [
     'authors_link' => env('AUTHORS_LINK', false),
 
     /**
+     * Whether or not to show the "All Posts" navigation link.
+     *
+     * Default value: false
+     */
+    'posts_list_link' => env('POSTS_LIST_LINK', false),
+
+    /**
      * Enable fuzzy matching in search results for typo tolerance.
      *
      * Default value: false

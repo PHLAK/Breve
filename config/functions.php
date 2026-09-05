@@ -19,6 +19,10 @@ return [
         return (bool) filter_var($container->get('authors_link'), FILTER_VALIDATE_BOOLEAN);
     },
 
+    'posts_list_enabled' => function (Container $container): bool {
+        return (bool) filter_var($container->get('posts_list_link'), FILTER_VALIDATE_BOOLEAN);
+    },
+
     'redirects' => function (Container $container): array {
         /** @var string $redirectsFile */
         $redirectsFile = $container->get('redirects_file');

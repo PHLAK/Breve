@@ -41,7 +41,7 @@ class TagControllerTest extends TestCase
         );
 
         $twig = $this->mock(Twig::class);
-        $twig->expects($this->once())->method('render')->with($testResponse = new Response, 'posts.twig', [
+        $twig->expects($this->once())->method('render')->with($testResponse = new Response, 'index.twig', [
             'posts' => $postsForPage,
             'paginator' => new Paginator($postsWithTag, $perPage, 1),
         ])->willReturn(

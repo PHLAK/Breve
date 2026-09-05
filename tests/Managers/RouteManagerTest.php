@@ -18,7 +18,7 @@ use Tests\TestCase;
 class RouteManagerTest extends TestCase
 {
     private const array ROUTES = [
-        ['posts', '/[{page:[0-9]+}]', Controllers\PostsController::class],
+        ['index', '/[{page:[0-9]+}]', Controllers\IndexController::class],
         ['post', '/post/{slug}', Controllers\PostController::class],
         ['page', '/page/{slug}', Controllers\PageController::class],
         ['author', '/author/{author}[/{page:[0-9]+}]', Controllers\AuthorController::class],
@@ -27,6 +27,7 @@ class RouteManagerTest extends TestCase
         ['feed', '/feed', Controllers\FeedController::class],
         ['authors', '/authors', Controllers\AuthorsController::class],
         ['tags', '/tags', Controllers\TagsController::class],
+        ['posts', '/posts', Controllers\PostsController::class],
         ['theme.css', '/theme/css/{stylesheet}', Controllers\Themes\CssController::class],
         ['theme.js', '/theme/js/{script}', Controllers\Themes\JsController::class],
     ];
@@ -41,6 +42,7 @@ class RouteManagerTest extends TestCase
     {
         $this->container->set('authors_enabled', true);
         $this->container->set('tags_enabled', true);
+        $this->container->set('posts_list_enabled', true);
         $this->container->set('redirects_file', 'NONEXISTENT_FILE');
 
         /** @var App<Container>&MockObject $app */
