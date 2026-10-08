@@ -1,7 +1,7 @@
 # Pages
 
 ```text{3}
-/path/to/plume
+/path/to/breve
 ├── data
 │   ├── pages
 │   │   ├── about-this-blog.md
@@ -57,11 +57,11 @@ Publishing pages will render the contents of and update the cache for all pages.
 
 ::: code-group
 ```console [Docker]
-docker compose run --rm plume publish:pages
+docker compose run --rm breve publish:pages
 ```
 
 ```console [Manual]
-php plume publish:pages
+php breve publish:pages
 ```
 :::
 
@@ -73,10 +73,10 @@ update the cache for a single page specified by it's slug.
 
 ::: code-group
 ```console [Docker]
-docker compose run --rm plume publish:page <slug>
+docker compose run --rm breve publish:page <slug>
 ```
 
 ```console [Manual]
-php plume publish:page <slug>
+php breve publish:page <slug>
 ```
 :::

@@ -19,7 +19,7 @@ use UnexpectedValueException;
 
 class CacheFactory
 {
-    private const NAMESPACE = 'plume';
+    private const NAMESPACE = 'breve';
 
     #[Inject('cache_driver')]
     private string $cacheDriver;

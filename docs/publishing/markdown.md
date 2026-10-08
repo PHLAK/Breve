@@ -1,6 +1,6 @@
 # Markdown
 
-Plume supports the extended set of Markdown known as
+Breve supports the extended set of Markdown known as
 [GitHub Flavored Markdown](https://github.github.com/gfm/). For example, tables,
 task lists, strikethrough text and bare URLs (auto-linked) are supported out of
 the box.
@@ -24,7 +24,7 @@ For an overview of the Markdown syntax check out the
 [Markdown Extended Syntax](https://www.markdownguide.org/extended-syntax/)
 guides.
 
-In addition to the GitHub Flavored Markdown spec Plume supports some additional
+In addition to the GitHub Flavored Markdown spec Breve supports some additional
 features detailed below.
 
 ## Table of Contents

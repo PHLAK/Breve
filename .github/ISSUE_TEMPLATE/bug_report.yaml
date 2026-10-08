@@ -5,10 +5,10 @@ assignees: [PHLAK]
 
 body:
   - type: input
-    id: plume-version
+    id: breve-version
     attributes:
-      label: Plume Version
-      description: What version of Plume are you using?
+      label: Breve Version
+      description: What version of Breve are you using?
     validations:
       required: true
 
@@ -37,7 +37,7 @@ body:
     attributes:
       label: Web Server
       description: |
-        What HTTP web server are you using to serve Plume?
+        What HTTP web server are you using to serve Breve?
         **Examples:** Apache, NGINX, Caddy, etc.
     validations:
       required: false

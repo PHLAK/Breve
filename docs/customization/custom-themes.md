@@ -10,7 +10,7 @@
 Add your theme to the `themes` directory.
 
 ```text{3}
-/path/to/plume
+/path/to/breve
 ├── themes
 │   └── [custom themes will go here]
 └── docker-compose.yaml
@@ -22,7 +22,7 @@ theme (i.e. the folder name) you would like to use.
 ::: code-group
 ```dotenv [.env]
 # SITE_TITLE="Yet another amazing blog"
-# META_DESCRIPTION="Yet another amazing blog, published with Plume."
+# META_DESCRIPTION="Yet another amazing blog, published with Breve."
 
 THEME=hyperspace #[!code focus]
 
@@ -38,7 +38,7 @@ to render the theme. These files are nested in separate, top-level folders withi
 the theme directory.
 
 ```text{5-8}
-/path/to/plume
+/path/to/breve
 ├── data
 ├── themes
 │   └── some-theme
@@ -52,7 +52,7 @@ the theme directory.
 ### Views
 
 ```text{9}
-/path/to/plume
+/path/to/breve
 ├── data
 ├── themes
 │   └── some-theme
@@ -102,7 +102,7 @@ Renders the RSS feed of published posts.
 
 - `title`: The site title
 - `description`: The site meta description
-- `posts`: A list of [`Post`](https://github.com/PHLAK/Plume/blob/master/app/Data/Post.php)
+- `posts`: A list of [`Post`](https://github.com/PHLAK/Breve/blob/master/app/Data/Post.php)
   objects with the same properties as those listed for `posts.twig` below
 
 #### `page.twig` <badge type="info" text="/page/{slug}" />
@@ -111,7 +111,7 @@ Displays a user-generated page.
 
 ##### Data
 
-- `page`: A [`Page`](https://github.com/PHLAK/Plume/blob/master/app/Data/Page.php)
+- `page`: A [`Page`](https://github.com/PHLAK/Breve/blob/master/app/Data/Page.php)
   object with the following properties
   - `title`: The page title
   - `link`: The link text
@@ -125,16 +125,16 @@ author, and posts with a specific tag.
 
 ##### Data
 
-- `posts`: A list of [`Post`](https://github.com/PHLAK/Plume/blob/master/app/Data/Post.php)
+- `posts`: A list of [`Post`](https://github.com/PHLAK/Breve/blob/master/app/Data/Post.php)
   objects for the current page.
-  - `Post`: An individual [`Post`](https://github.com/PHLAK/Plume/blob/master/app/Data/Post.php)
+  - `Post`: An individual [`Post`](https://github.com/PHLAK/Breve/blob/master/app/Data/Post.php)
     object with following properties
     - `title`: The post title
     - `body`: The rendered post contents (HTML)
     - `published`: The post publish date (a Carbon date object)
     - `author`: The post author
     - `tags`: A list of post tags
-    - `image`: A [`PostImage`](https://github.com/PHLAK/Plume/blob/master/app/Data/PostImage.php)
+    - `image`: A [`PostImage`](https://github.com/PHLAK/Breve/blob/master/app/Data/PostImage.php)
       object with the following properties
         - `url`: The post image URL
         - `caption`: The raw post image caption (Markdown)
@@ -142,7 +142,7 @@ author, and posts with a specific tag.
     - `draft`: Post draft status
     - `excerpt`: The post excerpt (rendered HTML, from the `excerpt()` method)
 
-- `paginator`: A [`Paginator`](https://github.com/PHLAK/Plume/blob/master/app/Utilities/Paginator.php)
+- `paginator`: A [`Paginator`](https://github.com/PHLAK/Breve/blob/master/app/Utilities/Paginator.php)
   object with the following properties
   - `pages`: Total number of pages
   - `previous`: The previous page number (or `null` if on the first page)
@@ -154,14 +154,14 @@ Displays a single blog post.
 
 ##### Data
 
-- `post`: A [`Post`](https://github.com/PHLAK/Plume/blob/master/app/Data/Post.php)
+- `post`: A [`Post`](https://github.com/PHLAK/Breve/blob/master/app/Data/Post.php)
   object with the following properties
   - `title`: The post title
   - `body`: The rendered post contents (HTML)
   - `published`: The post publish date (a Carbon date object)
   - `author`: The author's name
   - `tags`: A list of tags
-  - `image`: A [`PostImage`](https://github.com/PHLAK/Plume/blob/master/app/Data/PostImage.php)
+  - `image`: A [`PostImage`](https://github.com/PHLAK/Breve/blob/master/app/Data/PostImage.php)
     object with the following properties
     - `url`: The post image URL
     - `caption`: The raw post image caption (Markdown)
@@ -190,7 +190,7 @@ Displays a list of all tags and a count of posts for each.
 ### Icons
 
 ```text{7}
-/path/to/plume
+/path/to/breve
 ├── data
 ├── themes
 │   └── some-theme
@@ -202,12 +202,12 @@ Displays a list of all tags and a count of posts for each.
 └── docker-compose.yaml
 ```
 
-`/path/to/plume/themes/{theme}/icons`
+`/path/to/breve/themes/{theme}/icons`
 
 ### Styles
 
 ```text{6}
-/path/to/plume
+/path/to/breve
 ├── data
 ├── themes
 │   └── some-theme
@@ -219,12 +219,12 @@ Displays a list of all tags and a count of posts for each.
 └── docker-compose.yaml
 ```
 
-`/path/to/plume/themes/{theme}/css`
+`/path/to/breve/themes/{theme}/css`
 
 ### Scripts
 
 ```text{8}
-/path/to/plume
+/path/to/breve
 ├── data
 ├── themes
 │   └── some-theme
@@ -236,4 +236,4 @@ Displays a list of all tags and a count of posts for each.
 └── docker-compose.yaml
 ```
 
-`/path/to/plume/themes/{theme}/js`
+`/path/to/breve/themes/{theme}/js`

@@ -5,13 +5,13 @@ lastUpdated: true
 
 # Introduction
 
-Welcome to Plume, your self-hosted, Markdown-powered publishing platform.
+Welcome to Breve, your self-hosted, Markdown-powered publishing platform.
 
-![Plume Screenshot](/images/screenshot.png)
+![Breve Screenshot](/images/screenshot.png)
 
-Plume is quick and easy to set up with Docker Compose and simple to manage with
+Breve is quick and easy to set up with Docker Compose and simple to manage with
 all posts (and pages) authored in Markdown and stored in a flat-file structure.
-And with flexible customization options Plume can be tailored to fit your
+And with flexible customization options Breve can be tailored to fit your
 personal or professional style.
 
 ## Features
@@ -25,15 +25,15 @@ personal or professional style.
 
 ## Changelog
 
-A list of changes can be found on the [GitHub Releases](https://github.com/PHLAK/Plume/releases) page.
+A list of changes can be found on the [GitHub Releases](https://github.com/PHLAK/Breve/releases) page.
 
 ## Support
 
-Support Plume development through a [one-time donation or monthly sponsorship](https://github.com/sponsors/PHLAK).
+Support Breve development through a [one-time donation or monthly sponsorship](https://github.com/sponsors/PHLAK).
 
 ## Copyright
 
-Plume is created and maintained by [Chris Kankiewicz](https://www.chriskankiewicz.com)
+Breve is created and maintained by [Chris Kankiewicz](https://www.chriskankiewicz.com)
 ([@PHLAK.dev](https://bsky.app/profile/phlak.dev)).
 
-This project is licensed under the [MIT License](https://github.com/PHLAK/Plume/blob/master/LICENSE).
+This project is licensed under the [MIT License](https://github.com/PHLAK/Breve/blob/master/LICENSE).

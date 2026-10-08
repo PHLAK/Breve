@@ -1,5 +1,5 @@
 {
-    "name": "phlak/plume",
+    "name": "phlak/breve",
     "description": "Self-hosted, markdown powered, flat-file blogging platform",
     "type": "project",
     "license": "MIT",
@@ -10,7 +10,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/PHLAK/Plume/issues"
+        "issues": "https://github.com/PHLAK/Breve/issues"
     },
     "require": {
         "php": ">= 8.4",

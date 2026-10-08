@@ -1,8 +1,8 @@
 # Getting Started
 
 This guide will walk you through creating, publishing, and viewing your first
-blog post. It assumes you already have Plume installed and running. If you
-haven't installed Plume yet, see the [Installation guide](installation.md).
+blog post. It assumes you already have Breve installed and running. If you
+haven't installed Breve yet, see the [Installation guide](installation.md).
 
 ## Creating Your First Post
 
@@ -10,7 +10,7 @@ Posts live in the `data/posts` directory as Markdown files. Create a new file
 named `hello-world.md` in that directory.
 
 ```text{4}
-/path/to/plume
+/path/to/breve
 ├── data
 │   └── posts
 │       └── hello-world.md
@@ -32,7 +32,7 @@ published: 2025-05-27 12:00:00
 author: Your Name
 ---
 
-Welcome to Plume! This is your first post.
+Welcome to Breve! This is your first post.
 
 You can write in **Markdown**, which makes formatting easy. For example:
 
@@ -46,16 +46,16 @@ Happy publishing!
 
 ### Publishing Your Post
 
-After saving your post, you must publish it so Plume can render the Markdown
+After saving your post, you must publish it so Breve can render the Markdown
 and update the site cache.
 
 ::: code-group
 ```console [Docker]
-docker compose run --rm plume publish:posts
+docker compose run --rm breve publish:posts
 ```
 
 ```console [Manual]
-php plume publish:posts
+php breve publish:posts
 ```
 :::
 
@@ -67,12 +67,12 @@ You should see output indicating that your post has been published successfully.
 
 ### View It Live
 
-Open your browser and navigate to the URL where Plume is running. Your new post
+Open your browser and navigate to the URL where Breve is running. Your new post
 will appear on the home page. Click the post title to read the full article.
 
 ## Next Steps
 
-Now that you've published your first post, you can explore more of what Plume
+Now that you've published your first post, you can explore more of what Breve
 has to offer:
 
 - Learn about [post options](publishing/posts.md) such as excerpts, featured

@@ -1,26 +1,26 @@
 # Installation
 
-## Plume Compose
+## Breve Compose
 
 > [!IMPORTANT] Requirements
 > - [Docker Compose](https://docs.docker.com/compose/)
 > - [Git Version Control](https://git-scm.com)
 > - [GNU Make](https://www.gnu.org/software/make/)
 
-For a long-term installation we provide [Plume Compose](https://github.com/PHLAK/plume-compose)
+For a long-term installation we provide [Breve Compose](https://github.com/PHLAK/breve-compose)
 as a quick and easy way of getting up and running with a pre-configured
 [Docker Compose](https://docs.docker.com/compose/) configuration.
 
 1. Clone the repository to a location of your choosing
 
     ```console
-    git clone https://github.com/PHLAK/plume-compose.git /path/to/plume
+    git clone https://github.com/PHLAK/breve-compose.git /path/to/breve
     ```
 
 2. Switch to your installation directory and initialize the configuration files
 
     ```console
-    cd /path/to/plume
+    cd /path/to/breve
     make init
     ```
 
@@ -36,12 +36,12 @@ as a quick and easy way of getting up and running with a pre-configured
 > - [Docker Compose](https://docs.docker.com/compose/)
 
 If you prefer a manual [Docker Compose](https://docs.docker.com/compose/)
-installation you may create a directory for your Plume app and, in that
+installation you may create a directory for your Breve app and, in that
 directory, add a `docker-compose.yaml` file and a folder (e.g. `data`) to 
 contain your data.
 
 ```text{4}
-/path/to/plume
+/path/to/breve
 ├── data
 │   └── [your data will go here]
 └── docker-compose.yaml
@@ -51,8 +51,8 @@ contain your data.
 ```yaml [docker-compose.yaml]
 services:
 
-  plume:
-    image: phlak/plume:latest
+  breve:
+    image: phlak/breve:latest
     environment:
       SITE_TITLE: My Amazing Blog
       # See configuration docs for additional variables
@@ -61,12 +61,12 @@ services:
     volumes:
       - ./data:/var/www/html/data
       - ./themes:/var/www/html/themes
-      - plume-cache:/var/www/html/cache/app
+      - breve-cache:/var/www/html/cache/app
     user: www-data
     restart: unless-stopped
 
 volumes:
-  plume-cache: {}
+  breve-cache: {}
 ```
 :::
 
@@ -86,16 +86,16 @@ same directory as the `docker-compose.yaml` file.
 > - [Docker](https://docs.docker.com)
 
 You may use `docker run` to launch a stand-alone Docker container from the
-official Docker image. This is a good way to test Plume for the first time but
+official Docker image. This is a good way to test Breve for the first time but
 is _not recommended_ for long-term use. Instead we recommend using either the
-[Plume Compose](#plume-compose) or [Docker Compose](#docker-compose)
+[Breve Compose](#breve-compose) or [Docker Compose](#docker-compose)
 installation method instead.
 
 ```console
 docker run --detach --publish <host_port>:80 \
     [--env ENVIRONMENT_VARIABLE=value] \
     --volume ./data:/var/www/html/data \
-    phlak/plume:latest
+    phlak/breve:latest
 ```
 
 > [!IMPORTANT]
@@ -112,19 +112,19 @@ docker run --detach --publish <host_port>:80 \
 > - [Composer](https://getcomposer.org)
 > - [Node.js](https://nodejs.org) and npm
 
-If you prefer to run Plume without Docker you may install it manually from
+If you prefer to run Breve without Docker you may install it manually from
 source.
 
 1. Clone the repository to a location of your choosing
 
     ```console
-    git clone https://github.com/PHLAK/Plume.git /path/to/plume
+    git clone https://github.com/PHLAK/Breve.git /path/to/breve
     ```
 
 2. Switch to your installation directory and install the PHP dependencies
 
     ```console
-    cd /path/to/plume
+    cd /path/to/breve
     composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
     ```
 
@@ -164,16 +164,16 @@ directory, then browse to `http://localhost:8080`.
 
 > [!TIP]
 > Posts and pages must be published from the command line by running
-> `php plume publish` from your installation directory. See
+> `php breve publish` from your installation directory. See
 > [Getting Started](getting-started.md) for more information.
 
 ## Reverse Proxy
 
-It's recommended to run Plume behind a reverse proxy. The following examples
-assume Plume is accessible on the host at `127.0.0.1:8076`.
+It's recommended to run Breve behind a reverse proxy. The following examples
+assume Breve is accessible on the host at `127.0.0.1:8076`.
 
 > [!TIP]
-> Replace `8076` with the port you configured for your Plume installation.
+> Replace `8076` with the port you configured for your Breve installation.
 
 ### NGINX
 

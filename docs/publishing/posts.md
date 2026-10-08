@@ -1,12 +1,12 @@
 # Posts
 
-As a publishing platform (i.e. blog), the main purpose of Plume is to facilitate
+As a publishing platform (i.e. blog), the main purpose of Breve is to facilitate
 the authoring and publishing of posts. This is made possible through Markdown
 files with a bit of YAML sprinkled in. To get started you may add your files
 with an extension of `.md` in the `data/posts` directory.
 
 ```text{3}
-/path/to/plume
+/path/to/breve
 ├── data
 │   ├── posts
 │   │   ├── some-amazing-post.md
@@ -23,7 +23,7 @@ with an extension of `.md` in the `data/posts` directory.
 
 ## Front Matter
 
-In order for a post to be recognized by Plume it _must_ contain some metadata
+In order for a post to be recognized by Breve it _must_ contain some metadata
 like a title and published date. This metadata is defined as "front matter",
 that is, some YAML set between triple-dashes (i.e. `---`) and must be the first
 thing in the file.
@@ -95,11 +95,11 @@ Publishing posts will render the contents of and update the cache for all posts.
 
 ::: code-group
 ```console [Docker]
-docker compose run --rm plume publish:posts
+docker compose run --rm breve publish:posts
 ```
 
 ```console [Manual]
-php plume publish:posts
+php breve publish:posts
 ```
 :::
 
@@ -111,10 +111,10 @@ update the cache for a single post specified by it's slug.
 
 ::: code-group
 ```console [Docker]
-docker compose run --rm plume publish:post <slug>
+docker compose run --rm breve publish:post <slug>
 ```
 
 ```console [Manual]
-php plume publish:post <slug>
+php breve publish:post <slug>
 ```
 :::

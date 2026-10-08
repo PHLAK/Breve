@@ -44,9 +44,9 @@ return [
     /**
      * Meta tag description text.
      *
-     * Default value: 'Yet another amazing blog, published with Plume.'
+     * Default value: 'Yet another amazing blog, published with Breve.'
      */
-    'meta_description' => env('META_DESCRIPTION', 'Yet another amazing blog, published with Plume.'),
+    'meta_description' => env('META_DESCRIPTION', 'Yet another amazing blog, published with Breve.'),
 
     /**
      * Custom theme ID. Specifies the cutsom application theme to use.

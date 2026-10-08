@@ -3,5 +3,5 @@ set -o errexit
 
 case "${1}" in
   serve) shift; exec apache2-foreground "${@}";;
-  *) exec php plume "${@}";;
+  *) exec php breve "${@}";;
 esac

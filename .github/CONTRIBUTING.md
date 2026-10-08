@@ -1,10 +1,10 @@
-# Contributing to Plume
+# Contributing to Breve
 
-Contributions are **welcome** via Pull Requests on [GitHub](https://github.com/PHLAK/Plume).
+Contributions are **welcome** via Pull Requests on [GitHub](https://github.com/PHLAK/Breve).
 
 **Before contributing** we encourage you to discuss the change in
-[GitHub Discussion](https://github.com/PHLAK/Plume/discussions)
-to verify fit with the overall direction and goals of Plume.
+[GitHub Discussion](https://github.com/PHLAK/Breve/discussions)
+to verify fit with the overall direction and goals of Breve.
 
 ## Pull Requests Requirements
 
@@ -50,7 +50,7 @@ Application tests can be ran with phpunit.
 
 ## AI Policy
 
-Plume has strict rules for AI usage:
+Breve has strict rules for AI usage:
 
   - **All AI usage MUST be disclosed.** The tools (e.g. Claude Code, GitHub
     Copilot, etc.) used and the extent of the AI assistance must be clearly

@@ -40,9 +40,9 @@ class RegisterGlobalsMiddlewareTest extends TestCase
     public static function currentUrlProvider(): array
     {
         return [
-            'without port' => ['https', 'plume.example.com', null, '/post/test-post', 'https://plume.example.com/post/test-post'],
-            'with standard port' => ['https', 'plume.example.com', 443, '/post/test-post', 'https://plume.example.com/post/test-post'],
-            'with custom port' => ['http', 'plume.example.com', 8080, '/post/test-post', 'http://plume.example.com:8080/post/test-post'],
+            'without port' => ['https', 'breve.example.com', null, '/post/test-post', 'https://breve.example.com/post/test-post'],
+            'with standard port' => ['https', 'breve.example.com', 443, '/post/test-post', 'https://breve.example.com/post/test-post'],
+            'with custom port' => ['http', 'breve.example.com', 8080, '/post/test-post', 'http://breve.example.com:8080/post/test-post'],
             'without host' => ['https', '', null, '/post/test-post', '/post/test-post'],
         ];
     }
@@ -54,7 +54,7 @@ class RegisterGlobalsMiddlewareTest extends TestCase
         $this->container->set('tags_enabled', $tagsEnabled);
 
         $request = $this->createMock(ServerRequestInterface::class);
-        $request->method('getUri')->willReturn($this->createUri('https', 'plume.example.com', null, '/post/test-post'));
+        $request->method('getUri')->willReturn($this->createUri('https', 'breve.example.com', null, '/post/test-post'));
 
         $handler = $this->createMock(RequestHandlerInterface::class);
         $handler->expects($this->once())->method('handle')->with($request);
@@ -67,7 +67,7 @@ class RegisterGlobalsMiddlewareTest extends TestCase
         $this->assertEquals([
             'authors_enabled' => $authorsEnabled,
             'tags_enabled' => $tagsEnabled,
-            'current_url' => 'https://plume.example.com/post/test-post',
+            'current_url' => 'https://breve.example.com/post/test-post',
         ], $this->view->getEnvironment()->getGlobals());
     }
 

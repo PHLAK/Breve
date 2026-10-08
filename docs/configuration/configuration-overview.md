@@ -2,26 +2,26 @@
 
 ## Environment Variables
 
-Plume allows customization through configuration. You can configure Plume in a
-few different ways. The simplest and _recommended_ way to configure Plume is
+Breve allows customization through configuration. You can configure Breve in a
+few different ways. The simplest and _recommended_ way to configure Breve is
 through environment variables. You can find a list of environment variables and
 their function in the [Environment Variables](environment-variables.md)
 documentation.
 
-### Plume Compose
+### Breve Compose
 
-When using the [Plume Compose](/installation#plume-compose) installation method
-environment variables should be defined in the `environment.d/plume.env` file.
+When using the [Breve Compose](/installation#breve-compose) installation method
+environment variables should be defined in the `environment.d/breve.env` file.
 
 ::: code-group
-```dotenv [plume.env]
+```dotenv [breve.env]
 SITE_TITLE="My Amazing Blog"
 TIMEZONE="America/Phoenix"
 ```
 :::
 
 > [!IMPORTANT]
-> After modifying `environment.d/plume.env` you must restart your containers
+> After modifying `environment.d/breve.env` you must restart your containers
 > (i.e. `docker compose up -d`) for the changes to apply.
 
 ### Docker Compose
@@ -34,8 +34,8 @@ attribute in your `docker-compose.yaml` file.
 ```yaml [docker-compose.yaml]
 services:
 
-  plume:
-    image: phlak/plume:<version>
+  breve:
+    image: phlak/breve:<version>
     environment: # [!code focus]
       SITE_TITLE: My Amazing Blog # [!code focus]
       TIMEZONE: America/Phoenix # [!code focus]
@@ -60,7 +60,7 @@ multiple times for each option.
 ```console
 docker run --detach --publish 8080:80 --volume ./data:/var/www/html/data \
     --env SITE_TITLE="My Amazing Blog" --env TIMEZONE="America/Phoenix" \ // [!code focus]
-    phlak/plume:latest
+    phlak/breve:latest
 ```
 
 ## Custom JavaScript and CSS
@@ -76,7 +76,7 @@ To inject your customization into your page, create a file named
 `customizations.html` in the data directory and place your code into this file.
 
 ```text{4}
-/path/to/plume
+/path/to/breve
 ├── data
 │   ├── [other files and folders]
 │   └── customizations.html
@@ -93,11 +93,11 @@ To inject your customization into your page, create a file named
 
 Sometimes you may need to change the slug of a page or post after it has
 already been published. Doing so would break existing links pointing to the old
-URL. Therefore, Plume allows you to define permanent redirects from old slugs to
+URL. Therefore, Breve allows you to define permanent redirects from old slugs to
 new ones with the `data/redirects.yaml` file.
 
 ```text{4}
-/path/to/plume
+/path/to/breve
 ├── data
 │   ├── [other files and folders]
 │   └── redirects.yaml

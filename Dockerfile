@@ -19,7 +19,7 @@ RUN ln --symbolic ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 COPY .docker/apache2/config/000-default.dev.conf /etc/apache2/sites-available/000-default.conf
 COPY .docker/php/config/php.dev.ini /usr/local/etc/php/php.ini
-COPY .docker/plume-entrypoint /usr/local/bin/plume-entrypoint
+COPY .docker/breve-entrypoint /usr/local/bin/breve-entrypoint
 
 RUN apt-get update && apt-get install --assume-yes --no-install-recommends \
     git libmemcached-dev libssl-dev make zip zlib1g-dev \
@@ -59,7 +59,7 @@ COPY .docker/php/config/php.prod.ini /usr/local/etc/php/php.ini
 COPY --from=build /var/www/html /var/www/html
 RUN chown --recursive www-data:www-data /var/www/html
 
-ENTRYPOINT ["plume-entrypoint"]
+ENTRYPOINT ["breve-entrypoint"]
 CMD ["serve"]
 
 # --------- DEV ----------

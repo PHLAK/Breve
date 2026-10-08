@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 const head = [
-    ['link', { rel: 'icon', href: '/images/plume.svg' }],
+    ['link', { rel: 'icon', href: '/images/breve.svg' }],
 ];
 
 if (process.env.ENVIRONMENT === 'production') {
@@ -9,17 +9,17 @@ if (process.env.ENVIRONMENT === 'production') {
 }
 
 export default defineConfig({
-    title: 'Plume Documentation',
-    description: 'The official Plume documentation',
+    title: 'Breve Documentation',
+    description: 'The official Breve documentation',
 
     head: head,
 
     themeConfig: {
-        logo: '/images/plume.svg',
+        logo: '/images/breve.svg',
 
         nav: [
-            { text: 'Help & Support', link: 'https://github.com/PHLAK/Plume/discussions' },
-            { text: 'Changelog', link: 'https://github.com/PHLAK/Plume/releases' },
+            { text: 'Help & Support', link: 'https://github.com/PHLAK/Breve/discussions' },
+            { text: 'Changelog', link: 'https://github.com/PHLAK/Breve/releases' },
         ],
 
         sidebar: [
@@ -65,12 +65,12 @@ export default defineConfig({
         search: { provider: 'local' },
 
         socialLinks: [
-            { icon: 'bluesky', link: 'https://bsky.app/profile/plume.pub' },
-            { icon: 'github', link: 'https://github.com/PHLAK/Plume' },
+            { icon: 'bluesky', link: 'https://bsky.app/profile/breve.blog' },
+            { icon: 'github', link: 'https://github.com/PHLAK/Breve' },
         ],
 
         editLink: {
-            pattern: 'https://github.com/PHLAK/Plume/edit/master/docs/:path'
+            pattern: 'https://github.com/PHLAK/Breve/edit/master/docs/:path'
         },
 
         lastUpdated: true,

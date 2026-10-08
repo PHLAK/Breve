@@ -1,10 +1,10 @@
 services:
 
-  plume:
+  breve:
     build:
       context: .
       target: dev
-    image: phlak/plume:dev
+    image: phlak/breve:dev
     depends_on: [memcached, valkey]
     extra_hosts:
       - host.docker.internal:host-gateway
@@ -30,7 +30,7 @@ services:
     build:
       context: .
       target: dev
-    image: phlak/plume:dev
+    image: phlak/breve:dev
     entrypoint: []
     command: npm run dev
     ports:

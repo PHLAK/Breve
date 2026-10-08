@@ -1,6 +1,6 @@
 # Environment Variables
 
-Plume utilizes environment variables for the majority of its configuration.
+Breve utilizes environment variables for the majority of its configuration.
 This page aims to be an exhaustive list of supported environment variables and
 their functions.
 
@@ -103,7 +103,7 @@ Enable fuzzy matching in search results for typo tolerance.
 description text.
 
 - **Possible Values:** Any string
-- **Default Value:** `Yet another amazing blog, published with Plume.`
+- **Default Value:** `Yet another amazing blog, published with Breve.`
 
 ### `PAGINATION`
 

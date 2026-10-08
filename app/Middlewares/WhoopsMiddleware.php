@@ -30,7 +30,7 @@ class WhoopsMiddleware
         }
 
         $this->pageHandler->setPageTitle(
-            sprintf('%s • Plume', $this->pageHandler->getPageTitle())
+            sprintf('%s • Breve', $this->pageHandler->getPageTitle())
         );
 
         $this->whoops->pushHandler($this->pageHandler);

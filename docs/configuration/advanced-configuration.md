@@ -15,7 +15,7 @@ give you full control over every application option and even allows full PHP
 code if desired.
 
 > [!TIP]
-> Plume utilizes [PHP-DI](https://php-di.org) for its configuration. See the
+> Breve utilizes [PHP-DI](https://php-di.org) for its configuration. See the
 > [PHP Definitions documentation](https://php-di.org/doc/php-definitions.html)
 > for more info on writing manual configuration definitions.
 
