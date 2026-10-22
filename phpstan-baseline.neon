@@ -175,12 +175,6 @@ parameters:
 			path: app/Utilities/Paginator.php
 
 		-
-			message: '#^Method App\\Utilities\\Paginator\:\:__construct\(\) throws checked exception DivisionByZeroError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: app/Utilities/Paginator.php
-
-		-
 			message: '#^Parameter \#1 \$value of function count expects array\|Countable, iterable given\.$#'
 			identifier: argument.type
 			count: 1
@@ -209,12 +203,6 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: config/functions.php
-
-		-
-			message: '#^Method Tests\\AuthorsTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/AuthorsTest.php
 
 		-
 			message: '#^Property Tests\\AuthorsTest\:\:\$authors \(App\\Authors\) does not accept mixed\.$#'
@@ -247,22 +235,10 @@ parameters:
 			path: tests/Data/PostTest.php
 
 		-
-			message: '#^Method Tests\\Decorators\\CachedAuthorsTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/Decorators/CachedAuthorsTest.php
-
-		-
 			message: '#^Property Tests\\Decorators\\CachedAuthorsTest\:\:\$cachedAuthors \(App\\Decorators\\CachedAuthors\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
 			path: tests/Decorators/CachedAuthorsTest.php
-
-		-
-			message: '#^Method Tests\\Decorators\\CachedPagesTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/Decorators/CachedPagesTest.php
 
 		-
 			message: '#^Property Tests\\Decorators\\CachedPagesTest\:\:\$cachedPages \(App\\Decorators\\CachedPages\) does not accept mixed\.$#'
@@ -271,22 +247,10 @@ parameters:
 			path: tests/Decorators/CachedPagesTest.php
 
 		-
-			message: '#^Method Tests\\Decorators\\CachedPostsTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/Decorators/CachedPostsTest.php
-
-		-
 			message: '#^Property Tests\\Decorators\\CachedPostsTest\:\:\$cachedPosts \(App\\Decorators\\CachedPosts\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
 			path: tests/Decorators/CachedPostsTest.php
-
-		-
-			message: '#^Method Tests\\Decorators\\CachedTagsTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/Decorators/CachedTagsTest.php
 
 		-
 			message: '#^Property Tests\\Decorators\\CachedTagsTest\:\:\$cachedTags \(App\\Decorators\\CachedTags\) does not accept mixed\.$#'
@@ -331,22 +295,10 @@ parameters:
 			path: tests/Middlewares/RegisterGlobalsMiddlewareTest.php
 
 		-
-			message: '#^Method Tests\\Middlewares\\RegisterGlobalsMiddlewareTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/Middlewares/RegisterGlobalsMiddlewareTest.php
-
-		-
 			message: '#^Property Tests\\Middlewares\\RegisterGlobalsMiddlewareTest\:\:\$view \(Slim\\Views\\Twig\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
 			path: tests/Middlewares/RegisterGlobalsMiddlewareTest.php
-
-		-
-			message: '#^Method Tests\\PagesTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/PagesTest.php
 
 		-
 			message: '#^Property Tests\\PagesTest\:\:\$pages \(App\\Pages\) does not accept mixed\.$#'
@@ -355,22 +307,10 @@ parameters:
 			path: tests/PagesTest.php
 
 		-
-			message: '#^Method Tests\\PostsTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/PostsTest.php
-
-		-
 			message: '#^Property Tests\\PostsTest\:\:\$posts \(App\\Posts\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
 			path: tests/PostsTest.php
-
-		-
-			message: '#^Method Tests\\TagsTest\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/TagsTest.php
 
 		-
 			message: '#^Property Tests\\TagsTest\:\:\$tags \(App\\Tags\) does not accept mixed\.$#'
@@ -381,12 +321,6 @@ parameters:
 		-
 			message: '#^Method Tests\\TestCase\:\:fileContents\(\) should return string but returns string\|false\.$#'
 			identifier: return.type
-			count: 1
-			path: tests/TestCase.php
-
-		-
-			message: '#^Method Tests\\TestCase\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
 			count: 1
 			path: tests/TestCase.php
 
