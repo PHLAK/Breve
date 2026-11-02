@@ -25,9 +25,9 @@ class RouteManagerTest extends TestCase
         ['tag', '/tag/{tag}[/{page:[0-9]+}]', Controllers\TagController::class],
         ['search', '/search', Controllers\SearchController::class],
         ['feed', '/feed', Controllers\FeedController::class],
+        ['posts', '/posts', Controllers\PostsController::class],
         ['authors', '/authors', Controllers\AuthorsController::class],
         ['tags', '/tags', Controllers\TagsController::class],
-        ['posts', '/posts', Controllers\PostsController::class],
         ['theme.css', '/theme/css/{stylesheet}', Controllers\Themes\CssController::class],
         ['theme.js', '/theme/js/{script}', Controllers\Themes\JsController::class],
     ];
